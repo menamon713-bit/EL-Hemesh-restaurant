@@ -8,8 +8,8 @@
     <!-- ============================================== -->
     <!-- الوصف والكلمات المفتاحية لمحركات البحث (SEO) -->
     <!-- ============================================== -->
-    <meta name="description" content="مطعم الحمش - أصل المشويات في قلفاو، سوهاج. اطلب الآن أشهى المشويات الطازجة، الكباب، الكفتة، والريش أونلاين.">
-    <meta name="keywords" content="مطعم الحمش, مشويات, قلفاو, سوهاج, كباب, كفتة, ريش, طلب أونلاين, مشويات على الفحم">
+    <meta name="description" content="مطعم الحمش - أصل المشويات في قلفاو، سوهاج. اطلب الآن أشهى المشويات الطازجة، الكباب، الكفتة، والريش أونلاين. الدفع نقداً عند الاستلام.">
+    <meta name="keywords" content="مطعم الحمش, مشويات, قلفاو, سوهاج, كباب, كفتة, ريش, طلب أونلاين, مشويات على الفحم, الدفع نقدا">
     
     <!-- خط Cairo من جوجل -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -188,6 +188,23 @@
         .cart-item-actions button:hover { color: #cc0000; }
 
         .cart-footer { padding: 25px; background-color: var(--light-bg); border-top: 1px solid var(--border-color); }
+        
+        /* تنبيه الدفع نقداً */
+        .payment-notice {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
         .cart-total { display: flex; justify-content: space-between; font-size: 20px; font-weight: 800; margin-bottom: 20px; }
         .cart-total span { color: var(--primary-red); }
         
@@ -370,7 +387,6 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <!-- أيقونة السلة -->
                 <div class="cart-icon" onclick="toggleCart()">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span id="cart-count" class="cart-badge">0</span>
@@ -390,9 +406,11 @@
                 <h3>أشهى المشويات في قلفاو</h3>
                 <p>نقدم لكم أشهى أنواع المشويات الطازجة بجودة عالية وطعم لا يقاوم</p>
                 <div class="hero-buttons">
+                    <!-- تم تحديث رقم الواتساب هنا -->
                     <a href="https://wa.me/201158859881" target="_blank" class="btn-primary">
                         <i class="fa-brands fa-whatsapp"></i> تواصل معنا عبر واتساب
                     </a>
+                    <!-- تم تحديث رقم الاتصال هنا -->
                     <a href="tel:01158859881" class="btn-secondary">
                         <i class="fa-solid fa-phone"></i> اتصل بنا
                     </a>
@@ -420,9 +438,9 @@
                 <p>من أفضل الأنواع</p>
             </div>
             <div class="feature-item">
-                <i class="fa-solid fa-star"></i>
-                <h4>مذاق مميز</h4>
-                <p>وصفات تقليدية بطعم أصيل</p>
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <h4>الدفع نقداً</h4>
+                <p>عند الاستلام</p>
             </div>
         </div>
     </section>
@@ -602,9 +620,10 @@
                 <div class="footer-col contact-info">
                     <h4>معلومات التواصل</h4>
                     <ul>
+                        <!-- تم تحديث الأرقام هنا -->
                         <li><i class="fa-solid fa-phone"></i> <a href="tel:01158859881">01158859881</a></li>
-                        <li><i class="fa-solid fa-phone"></i> <a href="tel:01141182196">01141182196</a></li>
                         <li><i class="fa-solid fa-location-dot"></i> قلفاو - سوهاج</li>
+                        <li><i class="fa-solid fa-money-bill-wave"></i> الدفع نقداً عند الاستلام</li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -624,7 +643,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>جميع الحقوق محفوظة  ©2026 مطعم الحمش</p>
+                <p>جميع الحقوق محفوظة © 2026 مطعم الحمش</p>
                 <p>تصميم وتطوير موقع إلكتروني</p>
             </div>
         </div>
@@ -638,15 +657,17 @@
             <button onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div id="cart-items" class="cart-items">
-            <!-- عناصر السلة ستظهر هنا -->
             <p style="text-align: center; color: #888; margin-top: 50px;">السلة فارغة حالياً</p>
         </div>
         <div class="cart-footer">
+            <div class="payment-notice">
+                <i class="fa-solid fa-money-bill-wave"></i> الدفع نقداً عند الاستلام
+            </div>
+            
             <div class="cart-total">
                 <span>الإجمالي:</span>
                 <span><span id="cart-total">0</span> جنيه</span>
             </div>
-            <!-- أزرار إتمام الطلب -->
             <div class="cart-actions">
                 <button class="btn-checkout-wa" onclick="checkoutWhatsApp()">
                     <i class="fa-brands fa-whatsapp"></i> إرسال الطلب واتساب
@@ -658,7 +679,7 @@
         </div>
     </div>
 
-    <!-- نافذة تأكيد الطلب الهاتفي المخصصة (Custom Call Modal) -->
+    <!-- نافذة تأكيد الطلب الهاتفي المخصصة -->
     <div id="call-modal-overlay" class="custom-modal-overlay" onclick="closeCallModal()">
         <div class="custom-modal" onclick="event.stopPropagation()">
             <div class="custom-modal-header">
@@ -668,6 +689,7 @@
             <div class="custom-modal-body">
                 <p>سيتم فتح تطبيق الاتصال الآن.</p>
                 <p>يرجى إخبار الموظف بتفاصيل طلبك المذكورة في السلة.</p>
+                <p>طريقة الدفع: نقداً عند الاستلام.</p>
             </div>
             <div class="custom-modal-footer">
                 <button class="btn-modal-call" onclick="executeCall()">
@@ -678,32 +700,25 @@
         </div>
     </div>
 
-    <!-- كود JavaScript للسلة والتفاعل -->
     <script>
-        // مصفوفة لتخزين عناصر السلة
         let cart = [];
 
-        // دالة إضافة عنصر للسلة
         function addToCart(id, name, price) {
             const existingItem = cart.find(item => item.id === id);
-            
             if (existingItem) {
                 existingItem.quantity += 1;
             } else {
                 cart.push({ id, name, price, quantity: 1 });
             }
-            
             updateCartUI();
             openCart();
         }
 
-        // دالة إزالة عنصر من السلة
         function removeFromCart(id) {
             cart = cart.filter(item => item.id !== id);
             updateCartUI();
         }
 
-        // دالة تحديث واجهة السلة
         function updateCartUI() {
             const cartItemsDiv = document.getElementById('cart-items');
             const cartCount = document.getElementById('cart-count');
@@ -719,7 +734,6 @@
                 cart.forEach(item => {
                     total += item.price * item.quantity;
                     count += item.quantity;
-                    
                     cartItemsDiv.innerHTML += `
                         <div class="cart-item">
                             <div class="cart-item-info">
@@ -734,16 +748,13 @@
                     `;
                 });
             }
-            
             cartCount.innerText = count;
             cartTotal.innerText = total;
         }
 
-        // دالة فتح وإغلاق السلة
         function toggleCart() {
             const sidebar = document.getElementById('cart-sidebar');
             const overlay = document.getElementById('cart-overlay');
-            
             if (sidebar.classList.contains('open')) {
                 sidebar.classList.remove('open');
                 overlay.classList.remove('open');
@@ -758,7 +769,6 @@
             document.getElementById('cart-overlay').classList.add('open');
         }
 
-        // دالة إتمام الطلب عبر واتساب
         function checkoutWhatsApp() {
             if (cart.length === 0) {
                 alert('السلة فارغة! يرجى إضافة بعض الوجبات أولاً.');
@@ -774,33 +784,30 @@
             });
             
             message += `\nالإجمالي: ${total} جنيه`;
+            message += `\nطريقة الدفع: نقداً عند الاستلام`;
             
-            const phone = '201158859881'; // رقم الواتساب بصيغة دولية
-            
+            // تم تحديث رقم الواتساب هنا (20 هي كود مصر)
+            const phone = '201158859881'; 
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
         }
 
-        // دالة فتح نافذة تأكيد الطلب الهاتفي
         function checkoutPhone() {
             if (cart.length === 0) {
                 alert('السلة فارغة! يرجى إضافة بعض الوجبات أولاً.');
                 return;
             }
-            
-            // فتح النافذة المخصصة بدلاً من التنبيه الافتراضي
             document.getElementById('call-modal-overlay').classList.add('open');
         }
 
-        // دالة إغلاق نافذة تأكيد الطلب الهاتفي
         function closeCallModal() {
             document.getElementById('call-modal-overlay').classList.remove('open');
         }
 
-        // دالة تنفيذ الاتصال الفعلي
         function executeCall() {
-            closeCallModal(); // إغلاق النافذة أولاً
-            const phone = '01158859881'; // رقم المطعم للاتصال
-            window.location.href = `tel:${phone}`; // فتح تطبيق الاتصال
+            closeCallModal();
+            // تم تحديث رقم الاتصال هنا
+            const phone = '01158859881'; 
+            window.location.href = `tel:${phone}`;
         }
     </script>
 </body>
